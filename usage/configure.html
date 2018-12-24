@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configure the Role &mdash; Ansible Minecraft Role  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Maintenance" href="maintenance/index.html" />
+    <link rel="prev" title="Usage" href="index.html" />
+ 
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Ansible Minecraft Role
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Usage</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configure the Role</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-the-server">Configure the Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-plugins">Install Plugins</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configure-plugin">Configure Plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maintenance/index.html">Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ansible Minecraft Role</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Usage</a> &raquo;</li>
+        
+      <li>Configure the Role</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-the-role">
+<h1>Configure the Role<a class="headerlink" href="#configure-the-role" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 minecraft<span class="o">]</span><span class="c1"># tree -L 3</span>
+.
+<span class="p">|</span>-- plugins
+<span class="p">|</span>   <span class="p">|</span>-- current -&gt; /opt/minecraft/plugins/releases/minimal
+<span class="p">|</span>   <span class="p">|</span>-- releases
+<span class="p">|</span>   <span class="p">|</span>   <span class="sb">`</span>-- minimal
+<span class="p">|</span>   <span class="sb">`</span>-- shared
+<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx
+<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx-1.23.4.jar -&gt; /opt/minecraft/plugins/releases/minimal/PermissionsEx-1.23.4.jar
+<span class="p">|</span>       <span class="p">|</span>-- PluginMetrics
+<span class="p">|</span>       <span class="p">|</span>-- TNE.jar -&gt; /opt/minecraft/plugins/releases/minimal/TNE.jar
+<span class="p">|</span>       <span class="p">|</span>-- TheNewEconomy
+<span class="p">|</span>       <span class="p">|</span>-- Updater
+<span class="p">|</span>       <span class="p">|</span>-- Vault
+<span class="p">|</span>       <span class="p">|</span>-- Vault.jar -&gt; /opt/minecraft/plugins/releases/minimal/Vault.jar
+<span class="p">|</span>       <span class="sb">`</span>-- bStats
+<span class="sb">`</span>-- server
+    <span class="p">|</span>-- current -&gt; /opt/minecraft/server/releases/1.9
+    <span class="p">|</span>-- releases
+    <span class="p">|</span>   <span class="sb">`</span>-- <span class="m">1</span>.9
+    <span class="sb">`</span>-- shared
+        <span class="p">|</span>-- ...
+        <span class="p">|</span>-- plugins -&gt; /opt/minecraft/plugins/shared
+        <span class="p">|</span>-- spigot.jar -&gt; /opt/minecraft/server/current/spigot-1.9.jar
+        <span class="sb">`</span>-- ...
+</pre></div>
+</div>
+<div class="section" id="configure-the-server">
+<h2>Configure the Server<a class="headerlink" href="#configure-the-server" title="Permalink to this headline">¶</a></h2>
+<p><strong>TBD</strong></p>
+</div>
+<div class="section" id="install-plugins">
+<h2>Install Plugins<a class="headerlink" href="#install-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">The Problems by many plugins is the copatibility.</div>
+<div class="line">The most plugins have a <code class="docutils literal notranslate"><span class="pre">*.jar`</span></code> and a configuration Folder.</div>
+<div class="line">Plugin updates shoud only change the used <code class="docutils literal notranslate"><span class="pre">*.jar</span></code>.</div>
+<div class="line">The config of a plugin will be placed under <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code>.</div>
+<div class="line">the jars placed under <code class="docutils literal notranslate"><span class="pre">plugins/releases/{pluginsets}/*.jar</span></code> and will finaly link to <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">finaly the <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code> will be linked to <code class="docutils literal notranslate"><span class="pre">server/shared/plugins</span></code></div>
+<div class="line">all pluginruntime data of your server will be stored under <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code></div>
+</div>
+<p><strong>example config:</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">minecraft_plugins_set_version</span><span class="p">:</span> <span class="s">&quot;minimal&quot;</span>
+<span class="nt">minecraft_plugin_sets</span><span class="p">:</span>
+  <span class="nt">minimal</span><span class="p">:</span>
+    <span class="nt">vault</span><span class="p">:</span>
+      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://media.forgecdn.net/files/2615/750/Vault.jar</span>
+    <span class="nt">permissionsEx</span><span class="p">:</span>
+      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://media.forgecdn.net/files/909/154/PermissionsEx-1.23.4.jar</span>
+      <span class="nt">config</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config_permissionex.yml.j2</span>
+          <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PermissionsEx/config.yml</span>
+    <span class="nt">tne</span><span class="p">:</span>
+      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/TheNewEconomy/TNE-Bukkit/releases/download/Beta-1.1.3/Beta.1.1.3.zip</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;archive&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="configure-plugin">
+<h3>Configure Plugin<a class="headerlink" href="#configure-plugin" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">To automatical configure a plugin create a <code class="docutils literal notranslate"><span class="pre">Jinja</span></code> templatefile at your Playbook <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder, and add a <code class="docutils literal notranslate"><span class="pre">config:</span></code> entry.</div>
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">dest:</span></code> path is relative to the <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code> folder.</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="maintenance/index.html" class="btn btn-neutral float-right" title="Maintenance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/nolte/ansible-minecraft">Fork me at GitHub</a>
+  </div>
+</div>
+ 
+
+
+</body>
+</html>
