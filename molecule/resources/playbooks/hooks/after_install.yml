@@ -1,6 +1,0 @@
----
-- name: test after_install hook
-  lineinfile:
-    dest: /tmp/hooks
-    line: after_install
-    create: true

@@ -1,6 +1,0 @@
----
-- name: test before_download hook
-  lineinfile:
-    dest: /tmp/hooks
-    line: before_download
-    create: true

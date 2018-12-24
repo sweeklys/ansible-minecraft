@@ -1,3 +1,0 @@
--  Ben Webber (`**@benwebber** <https://github.com/benwebber>`__)
--  Mark Côté (`**@markrcote** <https://github.com/markrcote>`__)
--  Simon McCartney (`**@simonmcc** <https://github.com/simonmcc>`__)

@@ -1,7 +1,0 @@
----
-
-- include: minecraft.yml
-  when: minecraft_server == 'minecraft'
-
-- include: spigot.yml
-  when: minecraft_server == 'spigot'
