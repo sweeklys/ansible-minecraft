@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Testing" href="testing.html" />
     <link rel="prev" title="Maintenance" href="../usage/maintenance/index.html" />
  
 
@@ -87,13 +88,10 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building">Building</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#versioning">Versioning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#releasing">Releasing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#molecule-tips">Molecule Tips</a></li>
 </ul>
 </li>
 </ul>
@@ -162,11 +160,20 @@
             
   <div class="section" id="development">
 <h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-with-molecule">Testing with Molecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-with-vagrant">Testing with Vagrant</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="line-block">
 <div class="line">The <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch contains the latest unrelesed version from the role, mostly stable ;)</div>
 <div class="line">New features will be develop in feature branches like <code class="docutils literal notranslate"><span class="pre">feature/integrate-cuberite</span></code>, <span class="red">it`s not recomendet to use this on PRODUCTION!!!</span>.</div>
 </div>
-<p>For the <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous Integration</a> we use <a class="reference external" href="https://travis-ci.org">Travis CI</a> <a class="reference external" href="https://travis-ci.org/nolte/ansible-minecraft"><img alt="Travis CI build status" src="https://travis-ci.org/nolte/ansible-minecraft.svg?branch=develop" /></a> as service.</p>
+<p>For the <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous Integration</a> we use <a class="reference external" href="https://travis-ci.org">Travis CI</a> <a class="reference external" href="https://travis-ci.org/nolte/ansible-minecraft"><img alt="Travis CI build status" src="https://travis-ci.org/nolte/ansible-minecraft.svg?branch=master" /></a> as service.</p>
 <div class="section" id="building">
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
 <p>As build script we use <a class="reference external" href="https://tox.readthedocs.io/en/latest/config.html">Tox</a>, so it`s easy to execute the different kind of build commands like, generate docs or execute tests.</p>
@@ -216,27 +223,6 @@
 <p>the updateable files are listed at <code class="docutils literal notranslate"><span class="pre">.bumpversion.cfg</span></code> at the project root directory.</p>
 </div>
 </div>
-<div class="section" id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>The Tests are impemented with <a class="reference external" href="https://molecule.readthedocs.io">Molecule</a></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>molecule <span class="nb">test</span> -s spigot
-</pre></div>
-</div>
-<div class="section" id="molecule-tips">
-<h3>Molecule Tips<a class="headerlink" href="#molecule-tips" title="Permalink to this headline">¶</a></h3>
-<p><strong>Starting the Containers</strong>
-.. code-block:: shell</p>
-<blockquote>
-<div>molecule create</div></blockquote>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>molecule converge
-
-docker <span class="nb">exec</span> -t -i centos7 /bin/bash
-
-verify       Run automated tests against instances.
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 
 
@@ -246,6 +232,8 @@ verify       Run automated tests against instances.
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../usage/maintenance/index.html" class="btn btn-neutral" title="Maintenance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

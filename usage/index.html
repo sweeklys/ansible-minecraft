@@ -156,8 +156,21 @@
             
   <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>For First usage of the Role crate a Ansible Playbook Project.</p>
-<p>with a structure like this:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configure.html">Configure the Role</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configure.html#configure-the-server">Configure the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure.html#install-plugins">Install Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maintenance/index.html">Maintenance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maintenance/index.html#usefull-commands">Usefull commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintenance/index.html#version-updates">Version updates</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>For First usage of the Role crate a Ansible Playbook Project, with a structure like this:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.
 ├── inventories
 │   ├── prod
@@ -173,7 +186,8 @@
 <p><em>(The</em> <code class="docutils literal notranslate"><span class="pre">Vagrantfile</span></code> <em>is only for a local TestEnv needet)</em></p>
 <p>List this <code class="docutils literal notranslate"><span class="pre">role</span></code> under the <code class="docutils literal notranslate"><span class="pre">requirements.yml</span></code> file.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nolte.minecraft</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nolte.ansible_minecraft</span>
+  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.1.0</span>
 <span class="nn">...</span>
 </pre></div>
 </div>
@@ -181,20 +195,6 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">Please when you host the Minecraft Server at the
 internet configure somethink like <code class="docutils literal notranslate"><span class="pre">firewalld</span></code> for a minimal portection, and don`t publish the <code class="docutils literal notranslate"><span class="pre">rcon.port</span></code> to the public space!!</p>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="configure.html">Configure the Role</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="configure.html#configure-the-server">Configure the Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configure.html#install-plugins">Install Plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="maintenance/index.html">Maintenance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="maintenance/index.html#usefull-commands">Usefull commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="maintenance/index.html#version-updates">Version updates</a></li>
-</ul>
-</li>
-</ul>
 </div>
 </div>
 
