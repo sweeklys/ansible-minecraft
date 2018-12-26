@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Development" href="index.html" />
+    <link rel="next" title="Used Public Services" href="public-services.html" />
+    <link rel="prev" title="Building" href="building.html" />
  
 
 
@@ -87,6 +88,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="building.html">Building</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#testing-with-molecule">Testing with Molecule</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#molecule-tips">Molecule Tips</a></li>
@@ -95,7 +97,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#testing-with-vagrant">Testing with Vagrant</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#building">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="public-services.html">Used Public Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#branch-modell">Branch Modell</a></li>
 </ul>
 </li>
 </ul>
@@ -184,31 +187,39 @@
 </div>
 <div class="section" id="molecule-tips">
 <h3>Molecule Tips<a class="headerlink" href="#molecule-tips" title="Permalink to this headline">¶</a></h3>
-<p><strong>Starting the Containers</strong>
-.. code-block:: shell</p>
-<blockquote>
-<div>molecule create</div></blockquote>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>molecule converge
-
-docker <span class="nb">exec</span> -t -i centos7 /bin/bash
-
-verify       Run automated tests against instances.
-</pre></div>
+<div class="line-block">
+<div class="line">For the development and debugging it is easyer and faster to execute the Molecule sequenzes step by step.</div>
+<div class="line">First you must start the container with <code class="docutils literal notranslate"><span class="pre">molecule</span> <span class="pre">create</span></code>, after the containers started, you can execute the Role/Playbook <code class="docutils literal notranslate"><span class="pre">molecule</span> <span class="pre">converge</span></code>.</div>
+<div class="line">Now, when all the steps are finished, you can execute the Integration Tests with <code class="docutils literal notranslate"><span class="pre">molecule</span> <span class="pre">verify</span></code></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For Debugging the role take a look into the container with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-t</span> <span class="pre">-i</span> <span class="pre">centos7</span> <span class="pre">/bin/bash</span></code></p>
 </div>
 </div>
 </div>
 <div class="section" id="testing-with-vagrant">
 <h2>Testing with Vagrant<a class="headerlink" href="#testing-with-vagrant" title="Permalink to this headline">¶</a></h2>
-<p>This role includes a Vagrantfile used with a Docker-based test harness that approximates the Travis CI setup for integration testing. Using Vagrant allows all contributors to test on the same platform and avoid false test failures due to untested or incompatible docker versions.</p>
-<p>1. Install <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a> and <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>.
-1.1 Accept the <a class="reference external" href="https://account.mojang.com/documents/minecraft_eula">Minecraft EULA</a> with setting a Environment Property like: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">mc_accept_eula=true</span> <span class="pre">&amp;&amp;</span> <span class="pre">vagrant</span> <span class="pre">up</span></code></p>
-<ol class="arabic simple" start="2">
-<li>Run <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code> from the same directory as the Vagrantfile in this repository.</li>
-</ol>
-<p>Now you can Connect with your Game again the Testserver on <code class="docutils literal notranslate"><span class="pre">localhost:25565</span></code> and test your server.</p>
-<ol class="arabic simple" start="3">
-<li>for manual lookups you can connect over SSH into the VM with: <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">ssh</span></code></li>
-</ol>
+<div class="line-block">
+<div class="line">This role includes a Vagrantfile used for <a class="reference external" href="https://en.wikipedia.org/wiki/Exploratory_testing">Exploratory testing</a>.</div>
+<div class="line">If you want to use this vagrant machine follow this steps:</div>
+</div>
+<div class="line-block">
+<div class="line">1. Install <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a> and <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>.</div>
+<div class="line">1.1. Accept the <a class="reference external" href="https://account.mojang.com/documents/minecraft_eula">Minecraft EULA</a> with setting a Environment Property like: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">mc_accept_eula=true</span></code></div>
+<div class="line">2. Run <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code> from the same directory as the Vagrantfile in this repository.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Now, you can start the game and conntecting again our server e.g. <code class="docutils literal notranslate"><span class="pre">localhost:25565</span></code> and test the changes.</p>
+</div>
+<div class="line-block">
+<div class="line">3. for manual lookups you can connect over SSH into the VM with: <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">ssh</span></code></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the Vagrant box allways exists, you can reexecute the Playbook with <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">rsync</span> <span class="pre">&amp;&amp;</span> <span class="pre">vagrant</span> <span class="pre">provision</span></code></p>
+</div>
 </div>
 </div>
 
@@ -220,8 +231,10 @@ verify       Run automated tests against instances.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="public-services.html" class="btn btn-neutral float-right" title="Used Public Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="index.html" class="btn btn-neutral" title="Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="building.html" class="btn btn-neutral" title="Building" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

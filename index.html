@@ -166,13 +166,35 @@ Its recomendet to use the <code class="docutils literal notranslate"><span class
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage/index.html">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage/configure.html">Configure the Role</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/configure.html">Configure the Role</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage/configure.html#configure-the-server">Configure the Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage/configure.html#install-plugins">Install Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage/role-variables.html">Role variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage/role-variables.html#hooks-and-run-stages">Hooks and run stages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage/maintenance/index.html">Maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage/maintenance/index.html#usefull-commands">Usefull commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage/maintenance/index.html#version-updates">Version updates</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development/testing.html">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development/index.html#building">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development/building.html">Building</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development/building.html#versioning">Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development/building.html#releasing">Releasing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="development/testing.html">Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development/testing.html#testing-with-molecule">Testing with Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development/testing.html#testing-with-vagrant">Testing with Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="development/public-services.html">Used Public Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development/index.html#branch-modell">Branch Modell</a></li>
 </ul>
 </li>
 </ul>
@@ -195,22 +217,31 @@ Its recomendet to use the <code class="docutils literal notranslate"><span class
 </ul>
 <p><strong>All of this is needet but not a part of this role!</strong></p>
 <p>A finished installation can be looks like:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>xxxx@minecraft /<span class="o">]</span>$ tree -d -L <span class="m">4</span> /opt/
-/opt/
-└── minecraft
-    └── server
-        ├── current -&gt; /opt/minecraft/server/releases/1.13.1
-        ├── releases
-        │   └── <span class="m">1</span>.13.1
-        └── shared
-            ├── logs
-            ├── plugins
-            ├── world
-            ├── world_flat
-            ├── world_nether
-            ├── world_survival
-            ├── world_survival_nether
-            └── world_the_end
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 minecraft<span class="o">]</span><span class="c1"># tree -L 3</span>
+.
+<span class="p">|</span>-- plugins
+<span class="p">|</span>   <span class="p">|</span>-- current -&gt; /opt/minecraft/plugins/releases/minimal
+<span class="p">|</span>   <span class="p">|</span>-- releases
+<span class="p">|</span>   <span class="p">|</span>   <span class="sb">`</span>-- minimal
+<span class="p">|</span>   <span class="sb">`</span>-- shared
+<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx
+<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx-1.23.4.jar -&gt; /opt/minecraft/plugins/releases/minimal/PermissionsEx-1.23.4.jar
+<span class="p">|</span>       <span class="p">|</span>-- PluginMetrics
+<span class="p">|</span>       <span class="p">|</span>-- TNE.jar -&gt; /opt/minecraft/plugins/releases/minimal/TNE.jar
+<span class="p">|</span>       <span class="p">|</span>-- TheNewEconomy
+<span class="p">|</span>       <span class="p">|</span>-- Updater
+<span class="p">|</span>       <span class="p">|</span>-- Vault
+<span class="p">|</span>       <span class="p">|</span>-- Vault.jar -&gt; /opt/minecraft/plugins/releases/minimal/Vault.jar
+<span class="p">|</span>       <span class="sb">`</span>-- bStats
+<span class="sb">`</span>-- server
+    <span class="p">|</span>-- current -&gt; /opt/minecraft/server/releases/1.9
+    <span class="p">|</span>-- releases
+    <span class="p">|</span>   <span class="sb">`</span>-- <span class="m">1</span>.9
+    <span class="sb">`</span>-- shared
+        <span class="p">|</span>-- ...
+        <span class="p">|</span>-- plugins -&gt; /opt/minecraft/plugins/shared
+        <span class="p">|</span>-- spigot.jar -&gt; /opt/minecraft/server/current/spigot-1.9.jar
+        <span class="sb">`</span>-- ...
 </pre></div>
 </div>
 </div>

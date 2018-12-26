@@ -15,7 +15,7 @@ Overview
 -----------------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    usage/index
    development/index
@@ -42,21 +42,5 @@ Out of Scope
 
 A finished installation can be looks like:
 
-.. code-block:: shell
-
-    [xxxx@minecraft /]$ tree -d -L 4 /opt/
-    /opt/
-    └── minecraft
-        └── server
-            ├── current -> /opt/minecraft/server/releases/1.13.1
-            ├── releases
-            │   └── 1.13.1
-            └── shared
-                ├── logs
-                ├── plugins
-                ├── world
-                ├── world_flat
-                ├── world_nether
-                ├── world_survival
-                ├── world_survival_nether
-                └── world_the_end
+.. literalinclude:: install-structure-tree.txt
+   :language: bash

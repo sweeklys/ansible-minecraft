@@ -5,8 +5,9 @@ Usage
    :maxdepth: 2
 
    configure
+   role-variables
    maintenance/index
-   
+
 
 For First usage of the Role crate a Ansible Playbook Project, with a structure like this:
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Development &mdash; Ansible Minecraft Role  documentation</title>
+  <title>Used Public Services &mdash; Ansible Minecraft Role  documentation</title>
   
 
   
@@ -29,8 +29,7 @@
     <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Building" href="building.html" />
-    <link rel="prev" title="Maintenance" href="../usage/maintenance/index.html" />
+    <link rel="prev" title="Testing" href="testing.html" />
  
 
 
@@ -87,11 +86,11 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="building.html">Building</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="public-services.html">Used Public Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#branch-modell">Branch Modell</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Used Public Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#branch-modell">Branch Modell</a></li>
 </ul>
 </li>
 </ul>
@@ -139,7 +138,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Development</li>
+          <li><a href="index.html">Development</a> &raquo;</li>
+        
+      <li>Used Public Services</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,36 +157,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="development">
-<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<p>This section shoud be descripe how the development process <em>(coding, testing, releasing and publishing)</em> works.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="building.html">Building</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="building.html#versioning">Versioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building.html#releasing">Releasing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-with-molecule">Testing with Molecule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html#testing-with-vagrant">Testing with Vagrant</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="public-services.html">Used Public Services</a></li>
-</ul>
-</div>
-<div class="section" id="branch-modell">
-<h2>Branch Modell<a class="headerlink" href="#branch-modell" title="Permalink to this headline">¶</a></h2>
-<p>As Branchmodel we use a mix of <a class="reference external" href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">Gitflow</a> and <a class="reference external" href="https://help.github.com/articles/about-pull-requests/">pull-requests</a>.
-Gitflow is used for the Release Process, the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch present the latest Published Release.
-PullRequests are used for integrate external changes and <code class="docutils literal notranslate"><span class="pre">feature</span></code> branches into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</p>
-<div class="line-block">
-<div class="line">The <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch contains the latest unrelesed version from the role, mostly stable ;)</div>
-<div class="line">New features will be develop in feature branches like <code class="docutils literal notranslate"><span class="pre">feature/integrate-cuberite</span></code>, <span class="red">it`s not recomendet to use this on PRODUCTION!!!</span>.</div>
-<div class="line">The <code class="docutils literal notranslate"><span class="pre">master</span></code> present the latest published release.</div>
-</div>
-<p>For the <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous Integration</a> we use <a class="reference external" href="https://travis-ci.org">Travis CI</a> <a class="reference external" href="https://travis-ci.org/nolte/ansible-minecraft"><img alt="Travis CI build status" src="https://travis-ci.org/nolte/ansible-minecraft.svg?branch=master" /></a> as service.</p>
-</div>
+  <div class="section" id="used-public-services">
+<h1>Used Public Services<a class="headerlink" href="#used-public-services" title="Permalink to this headline">¶</a></h1>
+<p>For the Development we use a set of plublic services:</p>
+<dl class="docutils">
+<dt><a class="reference external" href="https://github.com/nolte/ansible-minecraft"><img alt="Github Project Stars" src="https://img.shields.io/github/stars/nolte/ansible-minecraft.svg?label=Stars&amp;style=social" /></a></dt>
+<dd><a class="reference external" href="https://github.com/nolte/ansible-minecraft">GitHub</a> for SoureCode and issue Tracking.</dd>
+<dt><a class="reference external" href="https://travis-ci.org/nolte/ansible-minecraft"><img alt="Travis CI build status" src="https://travis-ci.org/nolte/ansible-minecraft.svg?branch=master" /></a></dt>
+<dd><a class="reference external" href="https://travis-ci.org/nolte/ansible-minecraft">TravisCI</a> for simple tests execution an Ansible galaxy update notification.</dd>
+<dt><a class="reference external" href="https://circleci.com/gh/nolte/ansible-minecraft"><img alt="CircleCI build status" src="https://circleci.com/gh/nolte/ansible-minecraft.svg?style=svg" /></a></dt>
+<dd><a class="reference external" href="https://circleci.com/">CircleCI</a> for complex workflows, like releasing and publishing documentation.</dd>
+</dl>
 </div>
 
 
@@ -196,10 +178,8 @@ PullRequests are used for integrate external changes and <code class="docutils l
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="building.html" class="btn btn-neutral float-right" title="Building" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../usage/maintenance/index.html" class="btn btn-neutral" title="Maintenance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="testing.html" class="btn btn-neutral" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
