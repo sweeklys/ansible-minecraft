@@ -48,6 +48,11 @@ Install Plugins
         tne:
           src: https://github.com/TheNewEconomy/TNE-Bukkit/releases/download/Beta-1.1.3/Beta.1.1.3.zip
           type: "archive"
+        multiverse:
+          src: https://ci.onarandombox.com/job/Multiverse-SignPortals/lastSuccessfulBuild
+          type: "jenkins_latest"
+          validate_certs: false
+
 
 Configure Plugin
 `````````````````````````````````````````````````````````````````
