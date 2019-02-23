@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                4.1.0
+                4.2.0
               </div>
             
           
@@ -172,10 +172,10 @@
 <p><strong>This is a fork from the https://github.com/devops-coop/ansible-minecraft/ Project, thanks for the basement!!!</strong></p>
 <a class="reference external image-reference" href="https://circleci.com/gh/nolte/ansible-minecraft"><img alt="CircleCI" src="https://circleci.com/gh/nolte/ansible-minecraft.svg?style=svg" /></a>
 <a class="reference external image-reference" href="https://travis-ci.org/nolte/ansible-minecraft"><img alt="Build Status" src="https://travis-ci.org/nolte/ansible-minecraft.svg?branch=develop" /></a>
-<a class="reference external image-reference" href="https://galaxy.ansible.com/nolte/ansible_minecraft"><img alt="Install from Ansible Galaxy" src="https://img.shields.io/badge/role-nolte.ansible__minecraft-blue.svg" /></a>
+<a class="reference external image-reference" href="https://galaxy.ansible.com/nolte/minecraft"><img alt="Install from Ansible Galaxy" src="https://img.shields.io/badge/role-nolte.minecraft-blue.svg" /></a>
 <a class="reference external image-reference" href="https://gitter.im/devops-coop/ansible-minecraft"><img alt="Chat on gitter.im" src="https://badges.gitter.im/gitterHQ/gitter.png" /></a>
 <a class="reference external image-reference" href="https://github.com/nolte/ansible-minecraft"><img alt="" src="https://img.shields.io/github/release/nolte/ansible-minecraft.svg" /></a>
-<a class="reference external image-reference" href="https://ansible-minecraft.readthedocs.io/en/stable/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/ansible-minecraft/badge/?version=latest" /></a>
+<a class="reference external image-reference" href="https://ansible-minecraft.readthedocs.io/en/master"><img alt="Documentation Status" src="https://readthedocs.org/projects/ansible-minecraft/badge/?version=master" /></a>
 <p>This role installs <a class="reference external" href="https://minecraft.net/">Minecraft</a> or <a class="reference external" href="https://www.spigotmc.org/">Spigot</a> and configures it to run under <a class="reference external" href="https://wiki.freedesktop.org/www/Software/systemd/">systemd</a> or <a class="reference external" href="http://supervisord.org/">Supervisor</a>.</p>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
@@ -207,12 +207,12 @@
 <div>By default this role will be install a Vanilla Minecraft Server.</div></blockquote>
 <div class="section" id="install">
 <h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>ansible-galaxy install nolte.ansible_minecraft
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>ansible-galaxy install nolte.minecraft
 </pre></div>
 </div>
 <p>or add this to your <code class="docutils literal notranslate"><span class="pre">requirements.yml</span></code></p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- name: nolte.ansible_minecraft
-  version: 4.1.0
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- name: nolte.minecraft
+  version: 4.2.0
 </pre></div>
 </div>
 <p>and execute <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.yml</span></code></p>
@@ -221,7 +221,7 @@
 <h3>Use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- hosts: minecraft
   roles:
-     - { role: nolte.ansible_minecraft, minecraft_whitelist: [&quot;jeb_&quot;, &quot;dinnerbone&quot;]}
+     - { role: nolte.minecraft, minecraft_whitelist: [&quot;jeb_&quot;, &quot;dinnerbone&quot;]}
 </pre></div>
 </div>
 </div>
