@@ -1,3 +1,5 @@
+.. _role_config_role:
+
 Configure the Role
 =============================
 

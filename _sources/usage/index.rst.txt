@@ -1,4 +1,6 @@
-Usage
+.. _role_advanced_usage:
+
+Advanced Usage
 =======================
 
 .. toctree::

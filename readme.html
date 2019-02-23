@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ansible-minecraft &mdash; Ansible Minecraft Role  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Usage" href="usage/index.html" />
+    <link rel="prev" title="Ansible Role for Managing your Minecraft Server" href="index.html" />
+ 
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ansible Minecraft Role
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Readme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#out-of-role-scop">Out of Role Scop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use">Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ansible Minecraft Role</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>ansible-minecraft</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ansible-minecraft">
+<span id="readme"></span><h1>ansible-minecraft<a class="headerlink" href="#ansible-minecraft" title="Permalink to this headline">¶</a></h1>
+<p><strong>This is a fork from the https://github.com/devops-coop/ansible-minecraft/ Project, thanks for the basement!!!</strong></p>
+<a class="reference external image-reference" href="https://circleci.com/gh/nolte/ansible-minecraft"><img alt="CircleCI" src="https://circleci.com/gh/nolte/ansible-minecraft.svg?style=svg" /></a>
+<a class="reference external image-reference" href="https://travis-ci.org/nolte/ansible-minecraft"><img alt="Build Status" src="https://travis-ci.org/nolte/ansible-minecraft.svg?branch=develop" /></a>
+<a class="reference external image-reference" href="https://galaxy.ansible.com/nolte/ansible_minecraft"><img alt="Install from Ansible Galaxy" src="https://img.shields.io/badge/role-nolte.ansible__minecraft-blue.svg" /></a>
+<a class="reference external image-reference" href="https://gitter.im/devops-coop/ansible-minecraft"><img alt="Chat on gitter.im" src="https://badges.gitter.im/gitterHQ/gitter.png" /></a>
+<a class="reference external image-reference" href="https://github.com/nolte/ansible-minecraft"><img alt="" src="https://img.shields.io/github/release/nolte/ansible-minecraft.svg" /></a>
+<a class="reference external image-reference" href="https://ansible-minecraft.readthedocs.io/en/stable/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/ansible-minecraft/badge/?version=latest" /></a>
+<p>This role installs <a class="reference external" href="https://minecraft.net/">Minecraft</a> or <a class="reference external" href="https://www.spigotmc.org/">Spigot</a> and configures it to run under <a class="reference external" href="https://wiki.freedesktop.org/www/Software/systemd/">systemd</a> or <a class="reference external" href="http://supervisord.org/">Supervisor</a>.</p>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>supports <a class="reference external" href="https://minecraft.net">vanilla Minecraft</a> and <a class="reference external" href="https://spigotmc.org/">Spigot</a></li>
+<li>supports Debian 8, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, CentOS 7, Fedora 29</li>
+<li>supports different process supervisors on different platforms</li>
+<li>safely stops the server using <a class="reference external" href="http://minecraft.gamepedia.com/Commands#stop">stop</a> when running under <strong>systemd</strong></li>
+<li>uses <a class="reference external" href="https://www.docker.com/">Docker</a> and <a class="reference external" href="https://molecule.readthedocs.io/">Molecule</a> to run integration tests</li>
+<li>manages user ACLs</li>
+<li>manages Bukkit/Spigot Plugins</li>
+<li>manages <code class="docutils literal notranslate"><span class="pre">server.properties</span></code></li>
+<li>hooks: include arbitrary tasks at specific stages during execution</li>
+</ul>
+<div class="section" id="out-of-role-scop">
+<h3>Out of Role Scop<a class="headerlink" href="#out-of-role-scop" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>executing backups and recovery</li>
+<li>healthy checks like <a class="reference external" href="https://github.com/Fenixin/Minecraft-Region-Fixer">Minecraft-Region-Fixer</a></li>
+<li>handle utility services like <a class="reference external" href="https://www.elastic.co/de/products/beats/filebeat">filebeat</a> or <a class="reference external" href="https://github.com/prometheus/node_exporter">prometheus</a></li>
+<li>install additional Tools like <a class="reference external" href="https://github.com/itzg/rcon-cli">rcon-cli</a>.</li>
+</ul>
+<p><strong>All of this is needet but not a part of this role!</strong></p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>By default this role will be install a Vanilla Minecraft Server.</div></blockquote>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>ansible-galaxy install nolte.ansible_minecraft
+</pre></div>
+</div>
+<p>or add this to your <code class="docutils literal notranslate"><span class="pre">requirements.yml</span></code></p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- name: nolte.ansible_minecraft
+  version: 4.1.0
+</pre></div>
+</div>
+<p>and execute <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.yml</span></code></p>
+</div>
+<div class="section" id="use">
+<h3>Use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- hosts: minecraft
+  roles:
+     - { role: nolte.ansible_minecraft, minecraft_whitelist: [&quot;jeb_&quot;, &quot;dinnerbone&quot;]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python 2.7 on the Ansible control machine to generate user ACLs</li>
+<li>Ansible 2.0.2+ on the control machine to fetch the Minecraft version</li>
+</ul>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>The best way to contribute is to use this role to deploy your own Minecraft server! We really appreciate bug reports from the wild.</p>
+<p>If you’d like to help with the project itself, here are some other ways you can contribute:</p>
+<ul class="simple">
+<li>Add support for additional servers like <a class="reference external" href="https://cuberite.org/">Cuberite</a>.</li>
+<li>Write integration tests for Minecraft- or Spigot-specific configuration.</li>
+<li>Share useful hooks.</li>
+<li>Fixing Typos …</li>
+</ul>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Apache 2.0</p>
+</div>
+<div class="section" id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+<p>For execute a automatical installation you must accept the <a class="reference external" href="https://account.mojang.com/documents/minecraft_eula">Minecraft EULA</a>. Be aware that by using this role, you implicitly accept the same EULA.
+You can handle the acception by using a Environment Property like: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">mc_accept_eula=true</span></code> the default is <code class="docutils literal notranslate"><span class="pre">false</span></code> for disagree.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage/index.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Ansible Role for Managing your Minecraft Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/nolte/ansible-minecraft">Fork me at GitHub</a>
+  </div>
+</div>
+ 
+
+
+</body>
+</html>

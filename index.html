@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="_static/overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Usage" href="usage/index.html" />
+    <link rel="next" title="ansible-minecraft" href="readme.html" />
  
 
 
@@ -84,8 +84,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Usage</a></li>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Advanced Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li>
 </ul>
 
@@ -160,62 +162,18 @@ Its recomendet to use the <code class="docutils literal notranslate"><span class
 <div class="line">by example setting a envierment property like <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">mc_accept_eula=true</span></code></div>
 </div>
 </div>
-<p>This Documentation shoud be describe how you use and develop this Ansible Role.</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
+<p>This Documentation shoud be describe how you use and develop this Ansible Role.
+You find a list of possible role configurations at <a class="reference internal" href="usage/role-variables.html#role-config-variabels"><span class="std std-ref">Role variables</span></a>.</p>
+<div class="toctree-wrapper compound" id="mastertoc">
+<p class="caption"><span class="caption-text">Table of Contents</span><a class="headerlink" href="#mastertoc" title="Permalink to this toctree">¶</a></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage/configure.html">Configure the Role</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage/configure.html#configure-the-server">Configure the Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage/configure.html#install-plugins">Install Plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="usage/role-variables.html">Role variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage/role-variables.html#hooks-and-run-stages">Hooks and run stages</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="usage/maintenance/index.html">Maintenance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage/maintenance/index.html#usefull-commands">Usefull commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage/maintenance/index.html#version-updates">Version updates</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development/building.html">Building</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="development/building.html#versioning">Versioning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development/building.html#releasing">Releasing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="development/testing.html">Testing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="development/testing.html#testing-with-molecule">Testing with Molecule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development/testing.html#testing-with-vagrant">Testing with Vagrant</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="development/public-services.html">Used Public Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development/index.html#branch-modell">Branch Modell</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development/index.html">Development</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="role-scope-description">
-<h2>Role scope Description<a class="headerlink" href="#role-scope-description" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>initial installation</li>
-<li>handle mc server version updates</li>
-<li>handle plugins</li>
-</ul>
-<div class="section" id="out-of-scope">
-<h3>Out of Scope<a class="headerlink" href="#out-of-scope" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>executing backups and recovery</li>
-<li>healthy checks like <a class="reference external" href="https://github.com/Fenixin/Minecraft-Region-Fixer">Minecraft-Region-Fixer</a></li>
-<li>handle utility services like <a class="reference external" href="https://www.elastic.co/de/products/beats/filebeat">filebeat</a> or <a class="reference external" href="https://github.com/prometheus/node_exporter">prometheus</a></li>
-<li>install additional Tools like <a class="reference external" href="https://github.com/itzg/rcon-cli">rcon-cli</a>.</li>
-</ul>
-<p><strong>All of this is needet but not a part of this role!</strong></p>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
 <p>A finished installation can be looks like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 minecraft<span class="o">]</span><span class="c1"># tree -L 3</span>
 .
@@ -246,7 +204,6 @@ Its recomendet to use the <code class="docutils literal notranslate"><span class
 </div>
 </div>
 </div>
-</div>
 
 
            </div>
@@ -256,7 +213,7 @@ Its recomendet to use the <code class="docutils literal notranslate"><span class
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="usage/index.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="readme.html" class="btn btn-neutral float-right" title="ansible-minecraft" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
