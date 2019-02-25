@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.0
+                4.3.1
               </div>
             
           
@@ -187,8 +187,16 @@
 <dd>system user Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_server</span> <span class="pre">}}</span></code>)</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">minecraft_group</span></code></dt>
 <dd>system group Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_server</span> <span class="pre">}}</span></code>)</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_basedir</span></code></dt>
+<dd>directory base variable for the Minecraft installation (default: <code class="docutils literal notranslate"><span class="pre">/opt/minecraft</span></code>)</dd>
+</dl>
+<dl class="docutils" id="role-config-variabels-minecraft-home">
 <dt><code class="docutils literal notranslate"><span class="pre">minecraft_home</span></code></dt>
-<dd>directory to install Minecraft to (default: <code class="docutils literal notranslate"><span class="pre">/opt/minecraft</span></code>)</dd>
+<dd>directory to install Minecraft Server to (default: <code class="docutils literal notranslate"><span class="pre">{{minecraft_basedir}}/server</span></code>)</dd>
+</dl>
+<dl class="docutils" id="role-config-variabels-minecraft-plugins">
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_plugins</span></code></dt>
+<dd>directory to install Minecraft Plugins to (default: <code class="docutils literal notranslate"><span class="pre">{{minecraft_basedir}}/plugins</span></code>)</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">minecraft_max_memory</span></code></dt>
 <dd>Java max memory (<code class="docutils literal notranslate"><span class="pre">-Xmx</span></code>) to allocate (default: <code class="docutils literal notranslate"><span class="pre">1024M</span></code>)</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">minecraft_initial_memory</span></code></dt>

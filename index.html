@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                4.3.0
+                4.3.1
               </div>
             
           
@@ -177,31 +177,38 @@ You find a list of possible role configurations at <a class="reference internal"
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
 <p>A finished installation can be looks like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 minecraft<span class="o">]</span><span class="c1"># tree -L 3</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>vagrant@localhost minecraft<span class="o">]</span>$ tree -L <span class="m">4</span>
 .
-<span class="p">|</span>-- plugins
-<span class="p">|</span>   <span class="p">|</span>-- current -&gt; /opt/minecraft/plugins/releases/minimal
-<span class="p">|</span>   <span class="p">|</span>-- releases
-<span class="p">|</span>   <span class="p">|</span>   <span class="sb">`</span>-- minimal
-<span class="p">|</span>   <span class="sb">`</span>-- shared
-<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx
-<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx-1.23.4.jar -&gt; /opt/minecraft/plugins/releases/minimal/PermissionsEx-1.23.4.jar
-<span class="p">|</span>       <span class="p">|</span>-- PluginMetrics
-<span class="p">|</span>       <span class="p">|</span>-- TNE.jar -&gt; /opt/minecraft/plugins/releases/minimal/TNE.jar
-<span class="p">|</span>       <span class="p">|</span>-- TheNewEconomy
-<span class="p">|</span>       <span class="p">|</span>-- Updater
-<span class="p">|</span>       <span class="p">|</span>-- Vault
-<span class="p">|</span>       <span class="p">|</span>-- Vault.jar -&gt; /opt/minecraft/plugins/releases/minimal/Vault.jar
-<span class="p">|</span>       <span class="sb">`</span>-- bStats
-<span class="sb">`</span>-- server
-    <span class="p">|</span>-- current -&gt; /opt/minecraft/server/releases/1.9
-    <span class="p">|</span>-- releases
-    <span class="p">|</span>   <span class="sb">`</span>-- <span class="m">1</span>.9
-    <span class="sb">`</span>-- shared
-        <span class="p">|</span>-- ...
-        <span class="p">|</span>-- plugins -&gt; /opt/minecraft/plugins/shared
-        <span class="p">|</span>-- spigot.jar -&gt; /opt/minecraft/server/current/spigot-1.9.jar
-        <span class="sb">`</span>-- ...
+├── plugins
+│   ├── current -&gt; /opt/minecraft/plugins/releases/minimal
+│   ├── releases
+│   │   └── minimal
+│   │       ├── Multiverse.jar
+│   │       ├── PermissionsEx.jar
+│   │       ├── report-jenkinsbuild.yml
+│   │       ├── report-permissionsEx.yml
+│   │       ├── report-vault.yml
+│   │       ├── TNE.jar
+│   │       └── Vault.jar
+│   └── shared
+│       ├── Multiverse.jar -&gt; /opt/minecraft/plugins/releases/minimal/Multiverse.jar
+│       ├── PermissionsEx
+│       │   └── config.yml
+│       ├── PermissionsEx.jar -&gt; /opt/minecraft/plugins/releases/minimal/PermissionsEx.jar
+│       ├── TheNewEconomy
+│       ├── TNE.jar -&gt; /opt/minecraft/plugins/releases/minimal/TNE.jar
+│       └── Vault.jar -&gt; /opt/minecraft/plugins/releases/minimal/Vault.jar
+└── server
+    ├── current -&gt; /opt/minecraft/server/releases/1.13.2
+    ├── releases
+    │   └── <span class="m">1</span>.13.2
+    │       ├── ...
+    │       ├── spigot-1.13.2.jar
+    │       └── work
+    └── shared
+        ├── plugins -&gt; /opt/minecraft/plugins/shared
+        ├── server.properties
+        └── spigot.jar -&gt; /opt/minecraft/server/current/spigot-1.13.2.jar
 </pre></div>
 </div>
 </div>

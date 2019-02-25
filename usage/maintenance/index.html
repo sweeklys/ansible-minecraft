@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.0
+                4.3.1
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Maintenance</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#usefull-commands">Usefull commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#version-updates">Version updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filesystem-structure">FileSystem Structure</a></li>
 </ul>
 </li>
 </ul>
@@ -190,6 +191,43 @@
 <div class="section" id="version-updates">
 <h2>Version updates<a class="headerlink" href="#version-updates" title="Permalink to this headline">¶</a></h2>
 <p><strong>TBD</strong></p>
+</div>
+<div class="section" id="filesystem-structure">
+<span id="maintenance-structure-fs"></span><h2>FileSystem Structure<a class="headerlink" href="#filesystem-structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>vagrant@localhost minecraft<span class="o">]</span>$ tree -L <span class="m">4</span>
+.
+├── plugins
+│   ├── current -&gt; /opt/minecraft/plugins/releases/minimal
+│   ├── releases
+│   │   └── minimal
+│   │       ├── Multiverse.jar
+│   │       ├── PermissionsEx.jar
+│   │       ├── report-jenkinsbuild.yml
+│   │       ├── report-permissionsEx.yml
+│   │       ├── report-vault.yml
+│   │       ├── TNE.jar
+│   │       └── Vault.jar
+│   └── shared
+│       ├── Multiverse.jar -&gt; /opt/minecraft/plugins/releases/minimal/Multiverse.jar
+│       ├── PermissionsEx
+│       │   └── config.yml
+│       ├── PermissionsEx.jar -&gt; /opt/minecraft/plugins/releases/minimal/PermissionsEx.jar
+│       ├── TheNewEconomy
+│       ├── TNE.jar -&gt; /opt/minecraft/plugins/releases/minimal/TNE.jar
+│       └── Vault.jar -&gt; /opt/minecraft/plugins/releases/minimal/Vault.jar
+└── server
+    ├── current -&gt; /opt/minecraft/server/releases/1.13.2
+    ├── releases
+    │   └── <span class="m">1</span>.13.2
+    │       ├── ...
+    │       ├── spigot-1.13.2.jar
+    │       └── work
+    └── shared
+        ├── plugins -&gt; /opt/minecraft/plugins/shared
+        ├── server.properties
+        └── spigot.jar -&gt; /opt/minecraft/server/current/spigot-1.13.2.jar
+</pre></div>
+</div>
 </div>
 </div>
 

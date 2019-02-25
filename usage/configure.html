@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.0
+                4.3.1
               </div>
             
           
@@ -97,7 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#install-plugins">Install Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configure-plugin">Configure Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-plugin-download-source">Configure Plugin Download Source</a></li>
 </ul>
 </li>
 </ul>
@@ -173,35 +173,11 @@
             
   <div class="section" id="configure-the-role">
 <span id="role-config-role"></span><h1>Configure the Role<a class="headerlink" href="#configure-the-role" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 minecraft<span class="o">]</span><span class="c1"># tree -L 3</span>
-.
-<span class="p">|</span>-- plugins
-<span class="p">|</span>   <span class="p">|</span>-- current -&gt; /opt/minecraft/plugins/releases/minimal
-<span class="p">|</span>   <span class="p">|</span>-- releases
-<span class="p">|</span>   <span class="p">|</span>   <span class="sb">`</span>-- minimal
-<span class="p">|</span>   <span class="sb">`</span>-- shared
-<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx
-<span class="p">|</span>       <span class="p">|</span>-- PermissionsEx-1.23.4.jar -&gt; /opt/minecraft/plugins/releases/minimal/PermissionsEx-1.23.4.jar
-<span class="p">|</span>       <span class="p">|</span>-- PluginMetrics
-<span class="p">|</span>       <span class="p">|</span>-- TNE.jar -&gt; /opt/minecraft/plugins/releases/minimal/TNE.jar
-<span class="p">|</span>       <span class="p">|</span>-- TheNewEconomy
-<span class="p">|</span>       <span class="p">|</span>-- Updater
-<span class="p">|</span>       <span class="p">|</span>-- Vault
-<span class="p">|</span>       <span class="p">|</span>-- Vault.jar -&gt; /opt/minecraft/plugins/releases/minimal/Vault.jar
-<span class="p">|</span>       <span class="sb">`</span>-- bStats
-<span class="sb">`</span>-- server
-    <span class="p">|</span>-- current -&gt; /opt/minecraft/server/releases/1.9
-    <span class="p">|</span>-- releases
-    <span class="p">|</span>   <span class="sb">`</span>-- <span class="m">1</span>.9
-    <span class="sb">`</span>-- shared
-        <span class="p">|</span>-- ...
-        <span class="p">|</span>-- plugins -&gt; /opt/minecraft/plugins/shared
-        <span class="p">|</span>-- spigot.jar -&gt; /opt/minecraft/server/current/spigot-1.9.jar
-        <span class="sb">`</span>-- ...
-</pre></div>
-</div>
+<p>This role shoud fix two Problems, firstly <a class="reference internal" href="#role-config-role-server"><span class="std std-ref">Configure the Server</span></a> and secondly <a class="reference internal" href="#role-config-role-plugins"><span class="std std-ref">Install Plugins</span></a>.</p>
 <div class="section" id="configure-the-server">
-<h2>Configure the Server<a class="headerlink" href="#configure-the-server" title="Permalink to this headline">¶</a></h2>
+<span id="role-config-role-server"></span><h2>Configure the Server<a class="headerlink" href="#configure-the-server" title="Permalink to this headline">¶</a></h2>
+<p>This Role will be install by default a vanilla server to the configured <a class="reference internal" href="role-variables.html#role-config-variabels-minecraft-home"><span class="std std-ref">Server Directory</span></a>.
+You will find a full list of configuration attributes on <a class="reference internal" href="role-variables.html#role-config-variabels"><span class="std std-ref">Role variables</span></a>.</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">minecraft</span>
@@ -212,44 +188,82 @@
 </div>
 </div>
 <div class="section" id="install-plugins">
-<h2>Install Plugins<a class="headerlink" href="#install-plugins" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line">The Problems by many plugins is the copatibility.</div>
-<div class="line">The most plugins have a <code class="docutils literal notranslate"><span class="pre">*.jar`</span></code> and a configuration Folder.</div>
-<div class="line">Plugin updates shoud only change the used <code class="docutils literal notranslate"><span class="pre">*.jar</span></code>.</div>
-<div class="line">The config of a plugin will be placed under <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code>.</div>
-<div class="line">the jars placed under <code class="docutils literal notranslate"><span class="pre">plugins/releases/{pluginsets}/*.jar</span></code> and will finaly link to <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code></div>
-</div>
-<div class="line-block">
-<div class="line">finaly the <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code> will be linked to <code class="docutils literal notranslate"><span class="pre">server/shared/plugins</span></code></div>
-<div class="line">all pluginruntime data of your server will be stored under <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code></div>
-</div>
-<p><strong>example config:</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">minecraft_plugins_set_version</span><span class="p">:</span> <span class="s">&quot;minimal&quot;</span>
-<span class="nt">minecraft_plugin_sets</span><span class="p">:</span>
-  <span class="nt">minimal</span><span class="p">:</span>
-    <span class="nt">vault</span><span class="p">:</span>
-      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://media.forgecdn.net/files/2615/750/Vault.jar</span>
-    <span class="nt">permissionsEx</span><span class="p">:</span>
-      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://media.forgecdn.net/files/909/154/PermissionsEx-1.23.4.jar</span>
-      <span class="nt">config</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config_permissionex.yml.j2</span>
-          <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PermissionsEx/config.yml</span>
-    <span class="nt">tne</span><span class="p">:</span>
-      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/TheNewEconomy/TNE-Bukkit/releases/download/Beta-1.1.3/Beta.1.1.3.zip</span>
-      <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;archive&quot;</span>
-    <span class="nt">multiverse</span><span class="p">:</span>
-      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://ci.onarandombox.com/job/Multiverse-SignPortals/lastSuccessfulBuild</span>
-      <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;jenkins_latest&quot;</span>
-      <span class="nt">validate_certs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span id="role-config-role-plugins"></span><h2>Install Plugins<a class="headerlink" href="#install-plugins" title="Permalink to this headline">¶</a></h2>
+<p>The plugins will installed to the Configured <a class="reference internal" href="role-variables.html#role-config-variabels-minecraft-plugins"><span class="std std-ref">Plugins Location</span></a>
+into a Release subfolder like <code class="docutils literal notranslate"><span class="pre">plugins/releases/{pluginsets}/*.jar</span></code> and finaly link to <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code> Directory will be linked to <code class="docutils literal notranslate"><span class="pre">server/shared/plugins</span></code> all Plugin Runtime-data of
+your server will be stored under <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code>, see <a class="reference internal" href="maintenance/index.html#maintenance-structure-fs"><span class="std std-ref">FileSystem Structure</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="example-plugins-config">
+<div class="code-block-caption"><span class="caption-text">Example Plugin Source Config file</span><a class="headerlink" href="#example-plugins-config" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>      <span class="nt">minecraft_plugins_set_version</span><span class="p">:</span> <span class="s">&quot;minimal&quot;</span>
+      <span class="nt">minecraft_plugin_sets</span><span class="p">:</span>
+        <span class="nt">minimal</span><span class="p">:</span>
+          <span class="nt">vault</span><span class="p">:</span>
+            <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://media.forgecdn.net/files/2615/750/Vault.jar</span>
+          <span class="nt">permissionsEx</span><span class="p">:</span>
+            <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://media.forgecdn.net/files/909/154/PermissionsEx-1.23.4.jar</span>
+            <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PermissionsEx.jar</span>
+            <span class="nt">config</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="nt">src</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/molecule/resources/playbooks/templates/config_permissionex.yml.j2&quot;</span>
+                <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PermissionsEx/config.yml</span>
+          <span class="nt">multiverseCore</span><span class="p">:</span>
+            <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://ci.onarandombox.com/job/Multiverse-Core/lastSuccessfulBuild</span>
+            <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Multiverse-Core.jar</span>
+            <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;jenkins_latest&quot;</span>
+            <span class="nt">jenkins_artefact_path</span><span class="p">:</span> <span class="s">&quot;/artifact/target&quot;</span>
+            <span class="nt">force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+            <span class="nt">validate_certs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+          <span class="nt">tne</span><span class="p">:</span>
+            <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/TheNewEconomy/TNE-Bukkit/releases/download/0.1.1.8/TNE-0.1.1.8.zip</span>
+            <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;archive&quot;</span>
 </pre></div>
 </div>
-<div class="section" id="configure-plugin">
-<h3>Configure Plugin<a class="headerlink" href="#configure-plugin" title="Permalink to this headline">¶</a></h3>
-<div class="line-block">
+</div>
+<div class="section" id="configure-plugin-download-source">
+<span id="role-config-role-plugins-download-src"></span><h3>Configure Plugin Download Source<a class="headerlink" href="#configure-plugin-download-source" title="Permalink to this headline">¶</a></h3>
+<p>Directly Download a <code class="docutils literal notranslate"><span class="pre">*.jar</span></code> from a Webserver, like <code class="docutils literal notranslate"><span class="pre">media.forgecdn.net</span></code>.</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>optional</em>)</dt>
+<dd>default direct jar</dd>
+</dl>
+<blockquote id="role-config-role-plugins-jenkins">
+<div><code class="docutils literal notranslate"><span class="pre">&quot;jenkins_latest&quot;</span></code> used for load the latest successful build.</div></blockquote>
+<blockquote id="role-config-role-plugins-archive">
+<div><code class="docutils literal notranslate"><span class="pre">&quot;archive&quot;</span></code> used for load and unpack some Archive from remote.</div></blockquote>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">src</span></code></dt>
+<dd>The Download Source from the Plugin.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">dest</span></code> (<em>optional</em>)</dt>
+<dd>The local jar name, like <code class="docutils literal notranslate"><span class="pre">PermissionsEx.jar</span></code></dd>
+<dt><code class="docutils literal notranslate"><span class="pre">force</span></code> (<em>optional</em>)</dt>
+<dd>overwrite allways existing plugins, (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>).</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">validate_certs</span></code> (<em>optional</em>)</dt>
+<dd>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, SSL certificates will not be validated, look (<a class="reference external" href="https://docs.ansible.com/ansible/latest/modules/get_url_module.html">Ansible Doc, validate_certs</a>) (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>).</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">jenkins_artefact_path</span></code> (<em>optional</em>)</dt>
+<dd><div class="first last line-block">
+<div class="line">system group Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">/artifact/target</span></code>)</div>
+<div class="line">only usable with <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">&quot;jenkins_latest&quot;</span></code></div>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="role-config-role-plugins-configure">
+<dt><code class="docutils literal notranslate"><span class="pre">config</span></code> (<em>optional</em>)</dt>
+<dd><div class="first line-block">
 <div class="line">To automatical configure a plugin create a <code class="docutils literal notranslate"><span class="pre">Jinja</span></code> templatefile at your Playbook <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder, and add a <code class="docutils literal notranslate"><span class="pre">config:</span></code> entry.</div>
 <div class="line">The <code class="docutils literal notranslate"><span class="pre">dest:</span></code> path is relative to the <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code> folder.</div>
 </div>
+<div class="literal-block-wrapper last docutils container" id="example-plugin-conf-template">
+<div class="code-block-caption"><span class="caption-text">You can set a list of <code class="docutils literal notranslate"><span class="pre">dict`s</span></code> like:</span><a class="headerlink" href="#example-plugin-conf-template" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">config</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">src</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/templates/config_permissionex.yml.j2&quot;</span>
+    <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PermissionsEx/config.yml</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
