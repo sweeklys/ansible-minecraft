@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.2
+                5.0.1
               </div>
             
           
@@ -180,9 +180,9 @@
 You will find a full list of configuration attributes on <a class="reference internal" href="role-variables.html#role-config-variabels"><span class="std std-ref">Role variables</span></a>.</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">minecraft</span>
-  <span class="n">roles</span><span class="p">:</span>
-     <span class="o">-</span> <span class="p">{</span> <span class="n">role</span><span class="p">:</span> <span class="n">nolte</span><span class="o">.</span><span class="n">minecraft</span><span class="p">,</span> <span class="n">minecraft_whitelist</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;jeb_&quot;</span><span class="p">,</span> <span class="s2">&quot;dinnerbone&quot;</span><span class="p">]}</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minecraft</span>
+  <span class="nt">roles</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt"> role</span><span class="p">:</span> <span class="nv">nolte.minecraft</span><span class="p p-Indicator">,</span><span class="nt"> minecraft_whitelist</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;jeb_&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;dinnerbone&quot;</span><span class="p p-Indicator">]}</span>
 </pre></div>
 </div>
 </div>
@@ -222,37 +222,37 @@ your server will be stored under <code class="docutils literal notranslate"><spa
 <div class="section" id="configure-plugin-download-source">
 <span id="role-config-role-plugins-download-src"></span><h3>Configure Plugin Download Source<a class="headerlink" href="#configure-plugin-download-source" title="Permalink to this headline">¶</a></h3>
 <p>Directly Download a <code class="docutils literal notranslate"><span class="pre">*.jar</span></code> from a Webserver, like <code class="docutils literal notranslate"><span class="pre">media.forgecdn.net</span></code>.</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>optional</em>)</dt>
-<dd>default direct jar</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code> (<em>optional</em>)</dt><dd><p>default direct jar</p>
+</dd>
 </dl>
 <blockquote id="role-config-role-plugins-jenkins">
-<div><code class="docutils literal notranslate"><span class="pre">&quot;jenkins_latest&quot;</span></code> used for load the latest successful build.</div></blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">&quot;jenkins_latest&quot;</span></code> used for load the latest successful build.</p>
+</div></blockquote>
 <blockquote id="role-config-role-plugins-archive">
-<div><code class="docutils literal notranslate"><span class="pre">&quot;archive&quot;</span></code> used for load and unpack some Archive from remote.</div></blockquote>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">src</span></code></dt>
-<dd>The Download Source from the Plugin.</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">dest</span></code> (<em>optional</em>)</dt>
-<dd>The local jar name, like <code class="docutils literal notranslate"><span class="pre">PermissionsEx.jar</span></code></dd>
-<dt><code class="docutils literal notranslate"><span class="pre">force</span></code> (<em>optional</em>)</dt>
-<dd>overwrite allways existing plugins, (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>).</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">validate_certs</span></code> (<em>optional</em>)</dt>
-<dd>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, SSL certificates will not be validated, look (<a class="reference external" href="https://docs.ansible.com/ansible/latest/modules/get_url_module.html">Ansible Doc, validate_certs</a>) (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>).</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">jenkins_artefact_path</span></code> (<em>optional</em>)</dt>
-<dd><div class="first last line-block">
+<div><p><code class="docutils literal notranslate"><span class="pre">&quot;archive&quot;</span></code> used for load and unpack some Archive from remote.</p>
+</div></blockquote>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">src</span></code></dt><dd><p>The Download Source from the Plugin.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">dest</span></code> (<em>optional</em>)</dt><dd><p>The local jar name, like <code class="docutils literal notranslate"><span class="pre">PermissionsEx.jar</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">force</span></code> (<em>optional</em>)</dt><dd><p>overwrite allways existing plugins, (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">validate_certs</span></code> (<em>optional</em>)</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, SSL certificates will not be validated, look (<a class="reference external" href="https://docs.ansible.com/ansible/latest/modules/get_url_module.html">Ansible Doc, validate_certs</a>) (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">jenkins_artefact_path</span></code> (<em>optional</em>)</dt><dd><div class="line-block">
 <div class="line">system group Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">/artifact/target</span></code>)</div>
 <div class="line">only usable with <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">&quot;jenkins_latest&quot;</span></code></div>
 </div>
 </dd>
 </dl>
-<dl class="docutils" id="role-config-role-plugins-configure">
-<dt><code class="docutils literal notranslate"><span class="pre">config</span></code> (<em>optional</em>)</dt>
-<dd><div class="first line-block">
+<dl id="role-config-role-plugins-configure">
+<dt><code class="docutils literal notranslate"><span class="pre">config</span></code> (<em>optional</em>)</dt><dd><div class="line-block">
 <div class="line">To automatical configure a plugin create a <code class="docutils literal notranslate"><span class="pre">Jinja</span></code> templatefile at your Playbook <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder, and add a <code class="docutils literal notranslate"><span class="pre">config:</span></code> entry.</div>
 <div class="line">The <code class="docutils literal notranslate"><span class="pre">dest:</span></code> path is relative to the <code class="docutils literal notranslate"><span class="pre">plugins/shared</span></code> folder.</div>
 </div>
-<div class="literal-block-wrapper last docutils container" id="example-plugin-conf-template">
+<div class="literal-block-wrapper docutils container" id="example-plugin-conf-template">
 <div class="code-block-caption"><span class="caption-text">You can set a list of <code class="docutils literal notranslate"><span class="pre">dict`s</span></code> like:</span><a class="headerlink" href="#example-plugin-conf-template" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
 <span class="nt">config</span><span class="p">:</span>

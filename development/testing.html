@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.2
+                5.0.1
               </div>
             
           
@@ -173,13 +173,13 @@
 <h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
 <p>Testing can be done using the provided Vagrantfile or by installing <a class="reference external" href="https://docs.docker.com/engine/installation/">Docker</a> and use <a class="reference external" href="https://molecule.readthedocs.io/">Molecule</a> locally.</p>
 <p>For execute the molecule test you can use the Docker Image described at <a class="reference external" href="https://molecule.readthedocs.io/en/latest/examples.html#docker">Molecule</a> page.</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>docker run --rm -it \
-    -v $(pwd):/tmp/$(basename &quot;${PWD}&quot;):ro \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -e mc_accept_eula=${mc_accept_eula} \
-    -w /tmp/$(basename &quot;${PWD}&quot;) \
-    retr0h/molecule:latest \
-    sudo molecule test --all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -it <span class="se">\</span>
+    -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/tmp/<span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>:ro <span class="se">\</span>
+    -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+    -e <span class="nv">mc_accept_eula</span><span class="o">=</span><span class="si">${</span><span class="nv">mc_accept_eula</span><span class="si">}</span> <span class="se">\</span>
+    -w /tmp/<span class="k">$(</span>basename <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span> <span class="se">\</span>
+    retr0h/molecule:latest <span class="se">\</span>
+    sudo molecule <span class="nb">test</span> --all
 </pre></div>
 </div>
 <p>after execute drink a pot of tee, coffee or some beer, all molecule scenarios will be run more than 40 minute</p>
@@ -197,8 +197,8 @@
 <div class="line">Now, when all the steps are finished, you can execute the Integration Tests with <code class="docutils literal notranslate"><span class="pre">molecule</span> <span class="pre">verify</span></code></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For Debugging the role take a look into the container with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-t</span> <span class="pre">-i</span> <span class="pre">centos7</span> <span class="pre">/bin/bash</span></code></p>
+<p class="admonition-title">Note</p>
+<p>For Debugging the role take a look into the container with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-t</span> <span class="pre">-i</span> <span class="pre">centos7</span> <span class="pre">/bin/bash</span></code></p>
 </div>
 </div>
 </div>
@@ -214,15 +214,15 @@
 <div class="line">2. Run <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code> from the same directory as the Vagrantfile in this repository.</div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Now, you can start the game and conntecting again our server e.g. <code class="docutils literal notranslate"><span class="pre">localhost:25565</span></code> and test the changes.</p>
+<p class="admonition-title">Note</p>
+<p>Now, you can start the game and conntecting again our server e.g. <code class="docutils literal notranslate"><span class="pre">localhost:25565</span></code> and test the changes.</p>
 </div>
 <div class="line-block">
 <div class="line">3. for manual lookups you can connect over SSH into the VM with: <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">ssh</span></code></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If the Vagrant box allways exists, you can reexecute the Playbook with <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">rsync</span> <span class="pre">&amp;&amp;</span> <span class="pre">vagrant</span> <span class="pre">provision</span></code></p>
+<p class="admonition-title">Note</p>
+<p>If the Vagrant box allways exists, you can reexecute the Playbook with <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">rsync</span> <span class="pre">&amp;&amp;</span> <span class="pre">vagrant</span> <span class="pre">provision</span></code></p>
 </div>
 </div>
 </div>

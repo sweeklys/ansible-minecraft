@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.2
+                5.0.1
               </div>
             
           
@@ -168,76 +168,72 @@
   <div class="section" id="role-variables">
 <span id="role-config-variabels"></span><h1>Role variables<a class="headerlink" href="#role-variables" title="Permalink to this headline">¶</a></h1>
 <p>The following variable defaults are defined in <code class="docutils literal notranslate"><span class="pre">defaults/main.yml</span></code>.</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_version</span></code></dt>
-<dd><p class="first">Minecraft version to install (default: <code class="docutils literal notranslate"><span class="pre">latest</span></code>)</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_version</span></code></dt><dd><p>Minecraft version to install (default: <code class="docutils literal notranslate"><span class="pre">latest</span></code>)</p>
 <p>Examples:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minecraft_version</span><span class="p">:</span> <span class="n">latest</span>
-<span class="n">minecraft_version</span><span class="p">:</span> <span class="mf">1.10</span>
-<span class="n">minecraft_version</span><span class="p">:</span> <span class="mf">1.9</span><span class="o">.</span><span class="mi">1</span>
-<span class="n">minecraft_version</span><span class="p">:</span> <span class="mi">16</span><span class="n">w21a</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">minecraft_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+<span class="nt">minecraft_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.10</span>
+<span class="nt">minecraft_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.9.1</span>
+<span class="nt">minecraft_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16w21a</span>
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_eula_accept</span></code></dt>
-<dd>accept the Minecraft eula License, must accepted by the Role User (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_url</span></code></dt>
-<dd>Minecraft download URL (default:
-<code class="docutils literal notranslate"><span class="pre">https://s3.amazonaws.com/Minecraft.Download/versions</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_user</span></code></dt>
-<dd>system user Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_server</span> <span class="pre">}}</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_group</span></code></dt>
-<dd>system group Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_server</span> <span class="pre">}}</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_basedir</span></code></dt>
-<dd>directory base variable for the Minecraft installation (default: <code class="docutils literal notranslate"><span class="pre">/opt/minecraft</span></code>)</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_eula_accept</span></code></dt><dd><p>accept the Minecraft eula License, must accepted by the Role User (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_url</span></code></dt><dd><p>Minecraft download URL (default:
+<code class="docutils literal notranslate"><span class="pre">https://s3.amazonaws.com/Minecraft.Download/versions</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_user</span></code></dt><dd><p>system user Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_server</span> <span class="pre">}}</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_group</span></code></dt><dd><p>system group Minecraft runs as (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_server</span> <span class="pre">}}</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_basedir</span></code></dt><dd><p>directory base variable for the Minecraft installation (default: <code class="docutils literal notranslate"><span class="pre">/opt/minecraft</span></code>)</p>
+</dd>
 </dl>
-<dl class="docutils" id="role-config-variabels-minecraft-home">
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_home</span></code></dt>
-<dd>directory to install Minecraft Server to (default: <code class="docutils literal notranslate"><span class="pre">{{minecraft_basedir}}/server</span></code>)</dd>
+<dl class="simple" id="role-config-variabels-minecraft-home">
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_home</span></code></dt><dd><p>directory to install Minecraft Server to (default: <code class="docutils literal notranslate"><span class="pre">{{minecraft_basedir}}/server</span></code>)</p>
+</dd>
 </dl>
-<dl class="docutils" id="role-config-variabels-minecraft-plugins">
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_plugins</span></code></dt>
-<dd>directory to install Minecraft Plugins to (default: <code class="docutils literal notranslate"><span class="pre">{{minecraft_basedir}}/plugins</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_max_memory</span></code></dt>
-<dd>Java max memory (<code class="docutils literal notranslate"><span class="pre">-Xmx</span></code>) to allocate (default: <code class="docutils literal notranslate"><span class="pre">1024M</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_initial_memory</span></code></dt>
-<dd>Java initial memory (<code class="docutils literal notranslate"><span class="pre">-Xms</span></code>) to allocate (default: <code class="docutils literal notranslate"><span class="pre">1024M</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_service_name</span></code></dt>
-<dd>systemd service name or Supervisor program name (default: <code class="docutils literal notranslate"><span class="pre">minecraft</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_supervisor_name</span></code></dt>
-<dd><strong>DEPRECATED:</strong> Supervisor program name (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_service_name</span> <span class="pre">}}</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_process_control</span></code></dt>
-<dd>Choose between <code class="docutils literal notranslate"><span class="pre">systemd</span></code> and <code class="docutils literal notranslate"><span class="pre">supervisor</span></code> (default: <code class="docutils literal notranslate"><span class="pre">systemd</span></code>).</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_whitelist</span></code></dt>
-<dd>list of Minecraft usernames to whitelist (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_ops</span></code></dt>
-<dd>list of Minecraft usernames to make server ops (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_banned_players</span></code></dt>
-<dd>list of Minecraft usernames to ban (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_banned_ips</span></code></dt>
-<dd>list of IP addresses to ban (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_server_properties</span></code></dt>
-<dd>dictionary of server.properties entries (e.g. <code class="docutils literal notranslate"><span class="pre">server-port:</span> <span class="pre">25565</span></code>) to set (default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_server</span></code></dt>
-<dd>choose between <code class="docutils literal notranslate"><span class="pre">minecraft</span></code> or <code class="docutils literal notranslate"><span class="pre">spigot</span></code> (default: <code class="docutils literal notranslate"><span class="pre">minecraft</span></code>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_server_java_ops</span></code></dt>
-<dd>additional java ops like remote debug <code class="docutils literal notranslate"><span class="pre">-Xdebug</span> <span class="pre">-Xnoagent</span> <span class="pre">-Djava.compiler=NONE</span> <span class="pre">-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005</span></code> (default: <em>none</em>)</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_java_external_managed</span></code></dt>
-<dd>used for skipping the java installation tasks from this role, for handle Java by external scripts/roles (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</dd>
+<dl class="simple" id="role-config-variabels-minecraft-plugins">
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_plugins</span></code></dt><dd><p>directory to install Minecraft Plugins to (default: <code class="docutils literal notranslate"><span class="pre">{{minecraft_basedir}}/plugins</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_max_memory</span></code></dt><dd><p>Java max memory (<code class="docutils literal notranslate"><span class="pre">-Xmx</span></code>) to allocate (default: <code class="docutils literal notranslate"><span class="pre">1024M</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_initial_memory</span></code></dt><dd><p>Java initial memory (<code class="docutils literal notranslate"><span class="pre">-Xms</span></code>) to allocate (default: <code class="docutils literal notranslate"><span class="pre">1024M</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_service_name</span></code></dt><dd><p>systemd service name or Supervisor program name (default: <code class="docutils literal notranslate"><span class="pre">minecraft</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_supervisor_name</span></code></dt><dd><p><strong>DEPRECATED:</strong> Supervisor program name (default: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">minecraft_service_name</span> <span class="pre">}}</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_whitelist</span></code></dt><dd><p>list of Minecraft usernames to whitelist (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_ops</span></code></dt><dd><p>list of Minecraft usernames to make server ops (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_banned_players</span></code></dt><dd><p>list of Minecraft usernames to ban (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_banned_ips</span></code></dt><dd><p>list of IP addresses to ban (default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_server_properties</span></code></dt><dd><p>dictionary of server.properties entries (e.g. <code class="docutils literal notranslate"><span class="pre">server-port:</span> <span class="pre">25565</span></code>) to set (default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_server</span></code></dt><dd><p>choose between <code class="docutils literal notranslate"><span class="pre">minecraft</span></code> or <code class="docutils literal notranslate"><span class="pre">spigot</span></code> (default: <code class="docutils literal notranslate"><span class="pre">minecraft</span></code>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_server_java_ops</span></code></dt><dd><p>additional java ops like remote debug <code class="docutils literal notranslate"><span class="pre">-Xdebug</span> <span class="pre">-Xnoagent</span> <span class="pre">-Djava.compiler=NONE</span> <span class="pre">-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005</span></code> (default: <em>none</em>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_java_external_managed</span></code></dt><dd><p>used for skipping the java installation tasks from this role, for handle Java by external scripts/roles (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)</p>
+</dd>
 </dl>
 <div class="section" id="logging">
 <span id="role-config-variabels-minecraft-external-log-conf"></span><h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_external_log_conf</span></code> (<em>optional</em>) type Dict</dt>
-<dd><p class="first">handle a external Log4j2 Config used <a class="reference external" href="https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingRandomAccessFileAppender">RollingRandomAccessFileAppender</a>, controlling LogRotate, Maximal LogFile Size, and maximum keeped logs.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_external_log_conf</span></code> (<em>optional</em>) type Dict</dt><dd><p>handle a external Log4j2 Config used <a class="reference external" href="https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingRandomAccessFileAppender">RollingRandomAccessFileAppender</a>, controlling LogRotate, Maximal LogFile Size, and maximum keeped logs.</p>
 <p>Examples:</p>
-<div class="code yaml last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minecraft_external_log_conf</span><span class="p">:</span>
-  <span class="n">conf_file</span><span class="p">:</span> <span class="n">log4j2</span><span class="o">.</span><span class="n">xml</span>
-  <span class="n">template</span><span class="p">:</span> <span class="n">log4j2</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">j2</span>
-  <span class="n">fileName</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">minecraft</span><span class="o">/</span><span class="n">server</span><span class="o">.</span><span class="n">log</span>
-  <span class="n">filePattern</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">minecraft</span><span class="o">/</span><span class="n">server_</span><span class="o">%</span><span class="n">d</span><span class="p">{</span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span><span class="p">}</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">gz</span>
-  <span class="n">rollover</span><span class="p">:</span> <span class="mi">5</span>
-  <span class="n">sizeBased</span><span class="p">:</span> <span class="mi">10</span><span class="n">MB</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">minecraft_external_log_conf</span><span class="p">:</span>
+  <span class="nt">conf_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">log4j2.xml</span>
+  <span class="nt">template</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">log4j2.xml.j2</span>
+  <span class="nt">fileName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/log/minecraft/server.log</span>
+  <span class="nt">filePattern</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/log/minecraft/server_%d{yyyy-MM-dd}.log.gz</span>
+  <span class="nt">rollover</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+  <span class="nt">sizeBased</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10MB</span>
 </pre></div>
 </div>
 </dd>
@@ -246,66 +242,60 @@
 <div class="section" id="hooks-and-run-stages">
 <h2>Hooks and run stages<a class="headerlink" href="#hooks-and-run-stages" title="Permalink to this headline">¶</a></h2>
 <p><strong>ansible-minecraft</strong> organizes execution into a number of run stages:</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">setup</span></code></dt>
-<dd><ul class="first last simple">
-<li>install prerequisites (e.g., Java)</li>
-<li>create Minecraft user and group</li>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">setup</span></code></dt><dd><ul class="simple">
+<li><p>install prerequisites (e.g., Java)</p></li>
+<li><p>create Minecraft user and group</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">download</span></code></dt>
-<dd><ul class="first last simple">
-<li>fetch the latest version of from the launcher API</li>
-<li>download Minecraft</li>
+<dt><code class="docutils literal notranslate"><span class="pre">download</span></code></dt><dd><ul class="simple">
+<li><p>fetch the latest version of from the launcher API</p></li>
+<li><p>download Minecraft</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">install</span></code></dt>
-<dd><ul class="first last simple">
-<li>symlink version to <code class="docutils literal notranslate"><span class="pre">minecraft_server.jar</span></code></li>
-<li>agree to EULA</li>
+<dt><code class="docutils literal notranslate"><span class="pre">install</span></code></dt><dd><ul class="simple">
+<li><p>symlink version to <code class="docutils literal notranslate"><span class="pre">minecraft_server.jar</span></code></p></li>
+<li><p>agree to EULA</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">acl</span></code></dt>
-<dd><ul class="first last simple">
-<li>configure server ACLs (whitelist, banned players, etc.)</li>
+<dt><code class="docutils literal notranslate"><span class="pre">acl</span></code></dt><dd><ul class="simple">
+<li><p>configure server ACLs (whitelist, banned players, etc.)</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">configure</span></code></dt>
-<dd><ul class="first last simple">
-<li>set <code class="docutils literal notranslate"><span class="pre">server.properties</span></code></li>
+<dt><code class="docutils literal notranslate"><span class="pre">configure</span></code></dt><dd><ul class="simple">
+<li><p>set <code class="docutils literal notranslate"><span class="pre">server.properties</span></code></p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">start</span></code></dt>
-<dd><ul class="first last simple">
-<li>(re)start server</li>
+<dt><code class="docutils literal notranslate"><span class="pre">start</span></code></dt><dd><ul class="simple">
+<li><p>(re)start server</p></li>
 </ul>
 </dd>
 </dl>
 <p>You can execute custom tasks before or after specific stages. Simply specify a <a class="reference external" href="https://docs.ansible.com/ansible/playbooks_roles.html#task-include-files-and-encouraging-reuse">task include file</a> using the relevant role variable:</p>
-<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">minecraft</span>
-  <span class="n">roles</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">role</span><span class="p">:</span> <span class="n">devops</span><span class="o">-</span><span class="n">coop</span><span class="o">.</span><span class="n">minecraft</span>
-      <span class="n">minecraft_hook_before_start</span><span class="p">:</span> <span class="s2">&quot;{{ playbook_dir }}/download-world-from-s3.yml&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minecraft</span>
+  <span class="nt">roles</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">role</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">devops-coop.minecraft</span>
+      <span class="nt">minecraft_hook_before_start</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">playbook_dir</span><span class="nv"> </span><span class="s">}}/download-world-from-s3.yml&quot;</span>
 </pre></div>
 </div>
 <p>The available hooks are:</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_setup</span></code></dt>
-<dd>run before <code class="docutils literal notranslate"><span class="pre">setup</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_setup</span></code></dt>
-<dd>run after <code class="docutils literal notranslate"><span class="pre">setup</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_download</span></code></dt>
-<dd>run before <code class="docutils literal notranslate"><span class="pre">download</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_download</span></code></dt>
-<dd>run after <code class="docutils literal notranslate"><span class="pre">download</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_install</span></code></dt>
-<dd>run before <code class="docutils literal notranslate"><span class="pre">install</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_install</span></code></dt>
-<dd>run after <code class="docutils literal notranslate"><span class="pre">install</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_start</span></code></dt>
-<dd>run before <code class="docutils literal notranslate"><span class="pre">start</span></code> tasks</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_start</span></code></dt>
-<dd>run after <code class="docutils literal notranslate"><span class="pre">start</span></code> tasks</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_setup</span></code></dt><dd><p>run before <code class="docutils literal notranslate"><span class="pre">setup</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_setup</span></code></dt><dd><p>run after <code class="docutils literal notranslate"><span class="pre">setup</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_download</span></code></dt><dd><p>run before <code class="docutils literal notranslate"><span class="pre">download</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_download</span></code></dt><dd><p>run after <code class="docutils literal notranslate"><span class="pre">download</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_install</span></code></dt><dd><p>run before <code class="docutils literal notranslate"><span class="pre">install</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_install</span></code></dt><dd><p>run after <code class="docutils literal notranslate"><span class="pre">install</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_before_start</span></code></dt><dd><p>run before <code class="docutils literal notranslate"><span class="pre">start</span></code> tasks</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">minecraft_hook_after_start</span></code></dt><dd><p>run after <code class="docutils literal notranslate"><span class="pre">start</span></code> tasks</p>
+</dd>
 </dl>
 </div>
 </div>

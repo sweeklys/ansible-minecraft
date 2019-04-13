@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                4.3.2
+                5.0.1
               </div>
             
           
@@ -182,23 +182,22 @@
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>supports <a class="reference external" href="https://minecraft.net">vanilla Minecraft</a> and <a class="reference external" href="https://spigotmc.org/">Spigot</a></li>
-<li>supports Debian 8, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, CentOS 7, Fedora 29</li>
-<li>supports different process supervisors on different platforms</li>
-<li>safely stops the server using <a class="reference external" href="http://minecraft.gamepedia.com/Commands#stop">stop</a> when running under <strong>systemd</strong></li>
-<li>uses <a class="reference external" href="https://www.docker.com/">Docker</a> and <a class="reference external" href="https://molecule.readthedocs.io/">Molecule</a> to run integration tests</li>
-<li>manages user ACLs</li>
-<li>manages Bukkit/Spigot Plugins</li>
-<li>manages <code class="docutils literal notranslate"><span class="pre">server.properties</span></code></li>
-<li>hooks: include arbitrary tasks at specific stages during execution</li>
+<li><p>supports <a class="reference external" href="https://minecraft.net">vanilla Minecraft</a> and <a class="reference external" href="https://spigotmc.org/">Spigot</a></p></li>
+<li><p>supports Debian &gt;9, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, CentOS 7, Fedora 29</p></li>
+<li><p>safely stops the server using <a class="reference external" href="http://minecraft.gamepedia.com/Commands#stop">stop</a> when running under <strong>systemd</strong></p></li>
+<li><p>uses <a class="reference external" href="https://www.docker.com/">Docker</a> and <a class="reference external" href="https://molecule.readthedocs.io/">Molecule</a> to run integration tests</p></li>
+<li><p>manages user ACLs</p></li>
+<li><p>manages Bukkit/Spigot Plugins</p></li>
+<li><p>manages <code class="docutils literal notranslate"><span class="pre">server.properties</span></code></p></li>
+<li><p>hooks: include arbitrary tasks at specific stages during execution</p></li>
 </ul>
 <div class="section" id="out-of-role-scop">
 <h3>Out of Role Scop<a class="headerlink" href="#out-of-role-scop" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>executing backups and recovery</li>
-<li>healthy checks like <a class="reference external" href="https://github.com/Fenixin/Minecraft-Region-Fixer">Minecraft-Region-Fixer</a></li>
-<li>handle utility services like <a class="reference external" href="https://www.elastic.co/de/products/beats/filebeat">filebeat</a> or <a class="reference external" href="https://github.com/prometheus/node_exporter">prometheus</a></li>
-<li>install additional Tools like <a class="reference external" href="https://github.com/itzg/rcon-cli">rcon-cli</a>.</li>
+<li><p>executing backups and recovery</p></li>
+<li><p>healthy checks like <a class="reference external" href="https://github.com/Fenixin/Minecraft-Region-Fixer">Minecraft-Region-Fixer</a></p></li>
+<li><p>handle utility services like <a class="reference external" href="https://www.elastic.co/de/products/beats/filebeat">filebeat</a> or <a class="reference external" href="https://github.com/prometheus/node_exporter">prometheus</a></p></li>
+<li><p>install additional Tools like <a class="reference external" href="https://github.com/itzg/rcon-cli">rcon-cli</a>.</p></li>
 </ul>
 <p><strong>All of this is needet but not a part of this role!</strong></p>
 </div>
@@ -206,7 +205,8 @@
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>By default this role will be install a Vanilla Minecraft Server.</div></blockquote>
+<div><p>By default this role will be install a Vanilla Minecraft Server.</p>
+</div></blockquote>
 <div class="section" id="install">
 <h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>ansible-galaxy install nolte.minecraft
@@ -214,7 +214,7 @@
 </div>
 <p>or add this to your <code class="docutils literal notranslate"><span class="pre">requirements.yml</span></code></p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- name: nolte.minecraft
-  version: v4.3.2
+  version: v5.0.1
 </pre></div>
 </div>
 <p>and execute <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.yml</span></code></p>
@@ -231,8 +231,8 @@
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Python 2.7 on the Ansible control machine to generate user ACLs</li>
-<li>Ansible 2.4.0+ on the control machine to fetch the Minecraft version</li>
+<li><p>Python 2.7 on the Ansible control machine to generate user ACLs</p></li>
+<li><p>Ansible 2.4.0+ on the control machine to fetch the Minecraft version</p></li>
 </ul>
 </div>
 <div class="section" id="contributing">
@@ -240,10 +240,10 @@
 <p>The best way to contribute is to use this role to deploy your own Minecraft server! We really appreciate bug reports from the wild.</p>
 <p>If you’d like to help with the project itself, here are some other ways you can contribute:</p>
 <ul class="simple">
-<li>Add support for additional servers like <a class="reference external" href="https://cuberite.org/">Cuberite</a>.</li>
-<li>Write integration tests for Minecraft- or Spigot-specific configuration.</li>
-<li>Share useful hooks.</li>
-<li>Fixing Typos …</li>
+<li><p>Add support for additional servers like <a class="reference external" href="https://cuberite.org/">Cuberite</a>.</p></li>
+<li><p>Write integration tests for Minecraft- or Spigot-specific configuration.</p></li>
+<li><p>Share useful hooks.</p></li>
+<li><p>Fixing Typos …</p></li>
 </ul>
 </div>
 <div class="section" id="license">
