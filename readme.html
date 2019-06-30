@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                5.0.2
+                5.0.3
               </div>
             
           
@@ -209,21 +209,21 @@
 </div></blockquote>
 <div class="section" id="install">
 <h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>ansible-galaxy install nolte.minecraft
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">galaxy</span> <span class="n">install</span> <span class="n">nolte</span><span class="p">.</span><span class="n">minecraft</span>
 </pre></div>
 </div>
 <p>or add this to your <code class="docutils literal notranslate"><span class="pre">requirements.yml</span></code></p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- name: nolte.minecraft
-  version: v5.0.2
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">nolte</span><span class="p">.</span><span class="n">minecraft</span>
+  <span class="k">version</span><span class="p">:</span> <span class="n">v5</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>and execute <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.yml</span></code></p>
 </div>
 <div class="section" id="use">
 <h3>Use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>- hosts: minecraft
-  roles:
-     - { role: nolte.minecraft, minecraft_whitelist: [&quot;jeb_&quot;, &quot;dinnerbone&quot;]}
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">hosts</span><span class="p">:</span> <span class="n">minecraft</span>
+  <span class="n">roles</span><span class="p">:</span>
+     <span class="o">-</span> <span class="err">{</span> <span class="k">role</span><span class="p">:</span> <span class="n">nolte</span><span class="p">.</span><span class="n">minecraft</span><span class="p">,</span> <span class="n">minecraft_whitelist</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;jeb_&quot;</span><span class="p">,</span> <span class="ss">&quot;dinnerbone&quot;</span><span class="p">]</span><span class="err">}</span>
 </pre></div>
 </div>
 </div>
