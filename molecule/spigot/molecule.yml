@@ -1,6 +1,8 @@
 ---
 dependency:
   name: galaxy
+  options:
+    role-file: ./molecule/resources/playbooks/requirements.yml  
 driver:
   name: docker
 #lint:
@@ -88,6 +90,7 @@ provisioner:
         user_accept_minecraft_eula: ${mc_accept_eula}
         minecraft_server: spigot
         mc_version: 1.13.1
+        jdk_used_version: ${JDK_VERSION:-"11"}
   playbooks:
     converge: ../resources/playbooks/playbook.yml
   lint:

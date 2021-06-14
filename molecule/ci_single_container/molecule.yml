@@ -1,4 +1,8 @@
 ---
+dependency:
+  name: galaxy
+  options:
+    role-file: ./molecule/resources/playbooks/requirements.yml
 platforms:
   - name: instance
     image: ${MOL_IMAGE:-"solita/ubuntu-systemd:18.04"}
@@ -20,6 +24,7 @@ provisioner:
         user_accept_minecraft_eula: ${user_accept_minecraft_eula:-"false"}
         mc_version: ${MC_VERSION:-"latest"}
         minecraft_server: ${MC_SERVER_TYPE:-"minecraft"}
+        jdk_used_version: ${JDK_VERSION:-"11"}
   playbooks:
     converge: ../resources/playbooks/playbook.yml
   lint:
