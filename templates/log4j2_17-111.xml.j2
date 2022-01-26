@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="WARN" packages="com.mojang.util">
     <Appenders>
         <Console name="SysOut" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg{nolookups}%n" />
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
         </Console>
         <Queue name="ServerGuiConsole">
-            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg{nolookups}%n" />
+            <PatternLayout pattern="[%d{HH:mm:ss} %level]: %msg%n" />
         </Queue>
         <RollingRandomAccessFile name="File" fileName="{{ minecraft_external_log_conf.fileName | default('logs/server.log') }}" filePattern="{{ minecraft_external_log_conf.filePattern | default('logs/server_%d{yyyy-MM-dd}.log.gz') }}">
-            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg{nolookups}%n" />
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
             <Policies>
                 <TimeBasedTriggeringPolicy />
                 <OnStartupTriggeringPolicy />
@@ -25,6 +25,7 @@
         <Root level="info">
             <filters>
                 <MarkerFilter marker="NETWORK_PACKETS" onMatch="DENY" onMismatch="NEUTRAL" />
+                <RegexFilter regex="(?s).*\$\{[^}]*\}.*" onMatch="DENY" onMismatch="NEUTRAL" />
             </filters>
             <AppenderRef ref="SysOut" />
             <AppenderRef ref="File" />

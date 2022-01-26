@@ -74,7 +74,7 @@ provisioner:
       minecraftserver:
         user_accept_minecraft_eula: ${mc_accept_eula}
         mc_version: "latest"
-        jdk_used_version: ${JDK_VERSION:-"16"}
+        jdk_used_version: ${JDK_VERSION:-"17"}
   playbooks:
     converge: ../resources/playbooks/playbook.yml
   lint:

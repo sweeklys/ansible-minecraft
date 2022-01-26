@@ -21,7 +21,7 @@ This role installs [Minecraft](https://minecraft.net/) or [Spigot](https://www.s
 -  manages ``server.properties``
 -  hooks: include arbitrary tasks at specific stages during execution
 
-### Out of Role Scop
+### Out of Role Scope
 
 - install a *Java Runtime*, this must be done, before you use this Role, you can use [nolte/ansible-role-msopenjdk](https://github.com/nolte/ansible-role-msopenjdk) for example.
 - executing backups and recovery
