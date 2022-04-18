@@ -1,7 +1,7 @@
 Used Public Services
 =====================
 
-For the Development we use a set of plublic services:
+For the Development we use a set of public services:
 
 |Github Project Stars|
   `GitHub <https://github.com/nolte/ansible-minecraft>`_ for SoureCode and issue Tracking.

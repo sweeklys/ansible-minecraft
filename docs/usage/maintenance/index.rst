@@ -5,7 +5,7 @@ Maintenance
 
 .. _maintenance_commands:
 
-Usefull commands
+Useful commands
 ==================================
 
 +----------------------------------------------------------+-------------------+

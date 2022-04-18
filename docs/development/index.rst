@@ -1,7 +1,7 @@
 Development
 =====================
 
-This section shoud be descripe how the development process *(coding, testing, releasing and publishing)* works.
+This section shoud be describe how the development process *(coding, testing, releasing and publishing)* works.
 
 .. toctree::
    :maxdepth: 2
@@ -21,7 +21,7 @@ Gitflow is used for the Release Process, the ``master`` branch present the lates
 PullRequests are used for integrate external changes and ``feature`` branches into the ``develop`` branch.
 
 | The ``develop`` branch contains the latest unrelesed version from the role, mostly stable ;)
-| New features will be develop in feature branches like ``feature/integrate-cuberite``, :red:`it`s not recomendet to use this on PRODUCTION!!!`.
+| New features will be develop in feature branches like ``feature/integrate-cuberite``, :red:`it`s not recommended to use this on PRODUCTION!!!`.
 | The ``master`` present the latest published release.
 
 For the `Continuous Integration <https://en.wikipedia.org/wiki/Continuous_integration>`_ we use `GitHub Workflows` as service.

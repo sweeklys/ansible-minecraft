@@ -13,7 +13,7 @@ This role installs [Minecraft](https://minecraft.net/) or [Spigot](https://www.s
 ## Features
 
 -  supports [vanilla Minecraft](https://minecraft.net) and [Spigot](https://spigotmc.org/)
--  supports Debian >9, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, CentOS 7 & 8, Fedora 29
+-  supports Debian >9, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, CentOS 7 & 8, Fedora 29 - 34
 -  safely stops the server using [stop](http://minecraft.gamepedia.com/Commands#stop) when running under **systemd**
 -  uses [Docker](https://www.docker.com/) and [Molecule](https://molecule.readthedocs.io/) to run integration tests
 -  manages user ACLs
@@ -81,5 +81,5 @@ Apache 2.0
 
 ## Disclaimer
 
-For execute a automatical installation you must accept the [Minecraft EULA](https://account.mojang.com/documents/minecraft_eula). Be aware that by using this role, you implicitly accept the same EULA.
+To execute an automatic installation you must accept the [Minecraft EULA](https://account.mojang.com/documents/minecraft_eula). Be aware that by using this role, you implicitly accept the same EULA.
 You can handle the acception by using a Environment Property like: ``export mc_accept_eula=true`` the default is ``false`` for disagree.

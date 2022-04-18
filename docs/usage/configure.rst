@@ -3,7 +3,7 @@
 Configure the Role
 ***********************************************************************
 
-This role shoud fix two Problems, firstly :ref:`role_config_role_server` and secondly :ref:`role_config_role_plugins`.
+This role should fix two Problems, firstly :ref:`role_config_role_server` and secondly :ref:`role_config_role_plugins`.
 
 .. _role_config_role_server:
 
