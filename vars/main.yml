@@ -6,6 +6,7 @@ supported_ansible_os_families:
   - Alpine
 supported_minecraft_servers:
   - minecraft
+  - paper
   - spigot
 dependencies_spigot:
   - git

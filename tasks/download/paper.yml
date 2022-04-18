@@ -1,0 +1,9 @@
+---
+- name: download PaperMC server
+  get_url:
+    url: "{{ minecraft_paper_url }}"
+    dest: "{{ deploy_helper.new_release_path }}/minecraft_server.jar"
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_group }}"
+    # checksum: "{{ minecraft_server_download_checksum }}"
+    mode: '0755'
