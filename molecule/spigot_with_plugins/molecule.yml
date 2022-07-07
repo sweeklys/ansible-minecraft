@@ -21,8 +21,8 @@ platforms:
       - /tmp
       - /run
       - /run/lock
-  - name: centos8
-    image: centos:8
+  - name: almalinux9
+    image: almalinux:9
     groups:
       - minecraftserver
     command: /usr/sbin/init
