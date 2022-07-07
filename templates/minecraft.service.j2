@@ -17,6 +17,7 @@ ExecStop=/bin/sh -c "echo 'save-all' > {{ minecraft_console_fifo }}"
 ExecStop=/bin/sh -c "echo 'stop' > {{ minecraft_console_fifo }}"
 Restart=on-failure
 SuccessExitStatus=143
+RestartPreventExitStatus=143
 ProtectHome=true
 ProtectSystem=full
 PrivateTmp=true
