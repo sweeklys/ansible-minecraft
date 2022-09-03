@@ -45,9 +45,12 @@ jobs:
           - redhat-centos7-spigot-fixversion
           - redhat-centos7-spigot-latest
           - redhat-centos7-vanilla-fixversion
-          - redhat-centos8-spigot-fixversion
-          - redhat-centos8-spigot-latest
-          - redhat-centos8-vanilla-fixversion 
+          - redhat-almalinux8-spigot-fixversion
+          - redhat-almalinux8-spigot-latest
+          - redhat-almalinux8-vanilla-fixversion
+          - redhat-almalinux9-spigot-fixversion
+          - redhat-almalinux9-spigot-latest
+          - redhat-almalinux9-vanilla-fixversion           
           - redhat-twentyNine-spigot-fixversion
           - redhat-twentyNine-vanilla-fixversion
           - redhat-twentyNine-vanilla-latest
