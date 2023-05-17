@@ -34,7 +34,7 @@ Out of Role Scop
 -  handle utility services like `filebeat`_ or `prometheus`_
 -  install additional Tools like `rcon-cli`_.
 
-**All of this is needet but not a part of this role!**, *you will find
+**All of this is needed but not a part of this role!**, *you will find
 examples at*\ `nolte/minecraft-infrastructure`_\ *.*
 
 Usage
@@ -105,4 +105,3 @@ Minecraft server! We really appreciate bug
    :target: https://github.com/nolte/ansible-minecraft
 .. |Documentation Status| image:: https://readthedocs.org/projects/ansible-minecraft/badge/?version=master
    :target: https://ansible-minecraft.readthedocs.io/en/master
-

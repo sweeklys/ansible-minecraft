@@ -3,6 +3,9 @@
 - include: minecraft.yml
   when: minecraft_server == 'minecraft'
 
+- include: paper.yml
+  when: minecraft_server == 'paper'
+
 - include: spigot.yml
   when: minecraft_server == 'spigot'
 
@@ -28,11 +31,11 @@
 
  # https://help.minecraft.net/hc/en-us/articles/4416199399693-Security-Vulnerability-in-Minecraft-Java-Edition
 - name: set the default log4j config name
-  set_fact: 
+  set_fact:
     _log4j_default_template_file_name: log4j2.xml.j2
 
 - name: set overwrite for special mc versions
-  set_fact: 
+  set_fact:
     _log4j_default_template_file_name: log4j2_17-111.xml.j2
   when: (minecraft_version_int is version('1.7', '>=')) and (minecraft_version_int is version('1.11', '<='))
 

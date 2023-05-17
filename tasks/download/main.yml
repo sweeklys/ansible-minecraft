@@ -3,5 +3,8 @@
 - include: minecraft.yml
   when: minecraft_server == 'minecraft'
 
+- include: paper.yml
+  when: minecraft_server == 'paper'
+
 - include: spigot.yml
   when: minecraft_server == 'spigot'
